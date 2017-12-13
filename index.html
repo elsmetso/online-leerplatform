@@ -41,36 +41,35 @@
 					<a href="/contact">Contact</a>
 				</p>
 			</nav>
-			<div>
-				<div id="editor">print 'hello world'
-				</div>
-				<script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
-				<script>
-					var e = ace.edit("editor");
-					e.setTheme("ace/theme/tomorrow_night_eighties");
-					e.getSession().setMode("ace/mode/python");
-					e.setAutoScrollEditorIntoView(true);
-					e.setOption("maxLines", 30)
-				</script>
-			</div>
-			<div><br /><br /><br /><br /></div>
 			<button onclick="myFunction()">
 				Click me
 			</button>
-			<p>
-				dit staat achter de knop
-			</p>
+			<textarea rows="4" cols="50" id="result">
+nog niets
+</textarea>
+			
+		</div>
+		<div>
+			<div id="editor">
+				print 'hello world'
+			</div>
+			<script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
+			<script>
+				var e = ace.edit("editor");
+				e.setTheme("ace/theme/tomorrow_night_eighties");
+				e.getSession().setMode("ace/mode/python");
+				e.setAutoScrollEditorIntoView(true);
+				e.setOption("maxLines", 30)
+			</script>
 			<script>
 				function myFunction() {
 					var code = e.getValue();
-					try {
-						var result = iframeWindow.eval(code)
-					} catch(e) {
-						// report error...
-					}
+					document.getElementById("result").value = code;
 				}
 			</script>
 		</div>
+		
+
 		<footer>
 			<p>
 				&copy; Copyright  by smets
