@@ -118,14 +118,15 @@
 		</script>
 
 		<h3>Try This</h3>
-		<div id="editor">print ('hello world')
+		<div id="editor">
+			print ('hello world')
 		</div>
 
 		<script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			var editor = ace.edit("editor");
 			editor.setTheme("ace/theme/monokai");
-			editor.getSession().setMode("ace/mode/javascript");
+			editor.getSession().setMode("ace/mode/python");
 		</script>
 		<form>
 			<textarea id="yourcode" cols="40" rows="10"></textarea>
